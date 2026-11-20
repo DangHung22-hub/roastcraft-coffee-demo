@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RoastCraft Coffee Co. — Small-Batch Specialty Coffee &amp; Bakery</title>
+  <meta name="description" content="Small-batch roasted coffee, handcrafted espresso drinks, and fresh morning pastries in Portland. Responsive HTML5, CSS3 &amp; JavaScript landing page demo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header" id="top">
+    <div class="container nav-inner">
+      <a href="#top" class="brand" aria-label="RoastCraft Coffee Co. Home">
+        <span class="brand-mark" aria-hidden="true">RC</span>
+        <span class="brand-name">RoastCraft</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#menu">Menu</a>
+        <a href="#story">Our Story</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Visit &amp; Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-btn" id="openCartBtn" type="button" aria-label="Open demo cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span>Cart</span>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Small-Batch Roastery &amp; Cafe • Open Daily 7 AM – 6 PM</span>
+          <h1>Freshly Roasted Coffee, Crafted Every Morning.</h1>
+          <p class="hero-subtitle">
+            Ethically sourced single-origin beans roasted in small batches and paired with warm sourdough pastries.
+            Order ahead for quick counter pickup or stop by our neighborhood coffee bar.
+          </p>
+          <div class="hero-cta">
+            <a href="#menu" class="btn btn-primary">Explore the Menu</a>
+            <a href="#contact" class="btn btn-outline">Book Coffee Catering</a>
+          </div>
+          <div class="hero-metrics">
+            <div>
+              <strong>100%</strong>
+              <span>Arabica Single-Origin</span>
+            </div>
+            <div>
+              <strong>48 hrs</strong>
+              <span>Roast-to-Cup Freshness</span>
+            </div>
+            <div>
+              <strong>3 Locations</strong>
+              <span>Neighborhood Cafes</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-card">
+            <div class="cup-art">
+              <div class="steam"><span></span><span></span><span></span></div>
+              <div class="cup-body">
+                <div class="cup-rim"></div>
+                <div class="cup-label">ROASTCRAFT<br /><small>HOUSE BLEND</small></div>
+              </div>
+              <div class="cup-handle"></div>
+              <div class="cup-saucer"></div>
+            </div>
+            <div class="hero-card-footer">
+              <div>
+                <span class="tag">Roaster's Pick</span>
+                <h3>Ethiopian Yirgacheffe Pour-Over</h3>
+                <p>Jasmine, bergamot, honeyed peach finish.</p>
+              </div>
+              <strong class="price">$5.50</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu & Interactive Filter Section -->
+    <section class="section" id="menu">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Seasonal Offerings</span>
+            <h2>Crafted Drinks, Beans &amp; Pastries</h2>
+          </div>
+
+          <div class="menu-controls">
+            <div class="search-wrap">
+              <input type="search" id="menuSearch" placeholder="Search espresso, latte, beans..." aria-label="Search menu items" />
+            </div>
+            <div class="filter-pills" role="tablist" aria-label="Filter menu by category">
+              <button class="pill active" data-category="all" type="button">All</button>
+              <button class="pill" data-category="espresso" type="button">Espresso</button>
+              <button class="pill" data-category="beans" type="button">Whole Beans</button>
+              <button class="pill" data-category="pastry" type="button">Pastries</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+          <!-- Populated dynamically by script.js -->
+        </div>
+        <p class="empty-state" id="emptyState" hidden>No items match your search. Try another keyword or clear the filter.</p>
+      </div>
+    </section>
+
+    <!-- Story / Features Section -->
+    <section class="section section-alt" id="story">
+      <div class="container story-grid">
+        <div class="story-cards">
+          <div class="feature-card">
+            <span class="feature-num">01</span>
+            <h3>Direct-Trade Farms</h3>
+            <p>We partner directly with family farms in Ethiopia, Colombia, and Vietnam's Central Highlands.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-num">02</span>
+            <h3>Precision Roasting</h3>
+            <p>Every batch is profiled by temperature and airflow to highlight natural sweetness without bitterness.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-num">03</span>
+            <h3>Baked at Dawn</h3>
+            <p>Our croissants, cardamom buns, and dark-chocolate tarts come out of the oven at 6:30 AM daily.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-num">04</span>
+            <h3>Office &amp; Event Bars</h3>
+            <p>Need specialty coffee for a workshop or team morning? We bring mobile espresso bars to your venue.</p>
+          </div>
+        </div>
+
+        <div class="story-copy">
+          <span class="eyebrow">Our Craft</span>
+          <h2>Simple Ingredients, Unhurried Craftsmanship.</h2>
+          <p>
+            Started as a weekend micro-roaster, RoastCraft was built around one belief: great coffee should feel
+            welcoming, transparent, and consistently delicious—whether you're grabbing a quick cortado before work or
+            brewing a bag of whole beans at home.
+          </p>
+          <ul class="check-list">
+            <li>Compostable cups and zero-waste coffee grounds program</li>
+            <li>Custom grind options for espresso, V60, AeroPress, or French press</li>
+            <li>Oat, almond, and organic whole milk available at no extra charge</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="section" id="faq">
+      <div class="container faq-wrap">
+        <div class="section-head center">
+          <span class="eyebrow">Common Questions</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false">
+              <span>How fresh are your whole bean bags?</span>
+              <span class="acc-icon">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>We roast every Tuesday and Friday. Every bag is stamped with the exact roast date and shipped or stocked within 48 hours.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false">
+              <span>Can you grind beans for my home brewer?</span>
+              <span class="acc-icon">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>Yes! Just let us know your brewing method (Espresso, Pour-Over, Drip, or French Press) at the counter or in your order notes.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false">
+              <span>Do you offer coffee catering for small offices or events?</span>
+              <span class="acc-icon">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>Yes, we offer batch-brew boxes for 15–50 guests as well as full mobile espresso cart service. Use the contact form below for a custom quote.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false">
+              <span>Are dairy-free and gluten-friendly options available?</span>
+              <span class="acc-icon">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>We carry barista oat milk and almond milk daily, plus rotating gluten-friendly almond cakes and seasonal fruit tarts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Catering Form -->
+    <section class="section section-alt" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <span class="eyebrow">Visit or Say Hello</span>
+          <h2>Stop By for a Cup or Request Catering</h2>
+          <p>Have a question about wholesale beans, group orders, or private events? Send us a note and our team will reply within one business day.</p>
+          <div class="info-list">
+            <div><strong>Address:</strong> 412 Alder Street, Portland, OR</div>
+            <div><strong>Hours:</strong> Mon – Sun, 7:00 AM – 6:00 PM</div>
+            <div><strong>Phone:</strong> (503) 555-0194</div>
+            <div><strong>Email:</strong> hello@roastcraft-demo.example</div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <label for="nameInput">Full Name</label>
+            <input type="text" id="nameInput" name="name" placeholder="Jane Doe" required />
+          </div>
+          <div class="form-row">
+            <label for="emailInput">Email Address</label>
+            <input type="email" id="emailInput" name="email" placeholder="jane@company.com" required />
+          </div>
+          <div class="form-row">
+            <label for="topicSelect">Topic</label>
+            <select id="topicSelect" name="topic">
+              <option value="catering">Office / Event Catering</option>
+              <option value="wholesale">Wholesale Beans</option>
+              <option value="general">General Inquiry</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="messageInput">Message</label>
+            <textarea id="messageInput" name="message" rows="4" placeholder="Tell us about your event date, headcount, or question..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+          <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 RoastCraft Coffee Co. — Front-End Portfolio Demo built with pure HTML5, CSS3 &amp; Vanilla JavaScript.</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Slide-out Demo Cart Drawer -->
+  <div class="cart-backdrop" id="cartBackdrop" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Demo shopping cart" aria-hidden="true">
+    <div class="cart-head">
+      <h3>Your Order (Demo)</h3>
+      <button class="icon-close" id="closeCartBtn" type="button" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-body" id="cartItems">
+      <p class="cart-empty">Your cart is empty. Add any drink, bean bag, or pastry from the menu.</p>
+    </div>
+    <div class="cart-foot">
+      <div class="cart-total-row">
+        <span>Estimated Total</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <button class="btn btn-primary btn-full" id="checkoutDemoBtn" type="button">Place Demo Order</button>
+      <p class="cart-note" id="cartNote">Client-side interactive demo — no real payment processed.</p>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
